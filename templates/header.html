@@ -1,0 +1,33 @@
+<!-- /templates/header.html -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/header.css') }}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<div class="header">
+    <img class="logo" src="{{ url_for('static', filename='assets/logos/VitaBoostLogo.png') }}" alt="">
+    <div class="middle">
+        <h1 class="title">VitaBoost</h1>
+        <nav class="links">
+            <ul>
+                <li><a href="{{ url_for('home') }}">Shop</a></li>
+                <li><a href="{{ url_for('about_flask') }}">About Us</a></li>
+                <li><a href="{{ url_for('get_languages') }}">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="icons">
+        <img class="profile" src="{{ url_for('static', filename='assets/icons/user.png') }}" alt="">
+        <img class="cart" src="{{ url_for('static', filename='assets/icons/shopping-cart.png') }}" alt="">
+    </div>
+
+</div>
+
+{% block content %}
+{% endblock %}
+</body>
+</html>
