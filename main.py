@@ -13,7 +13,7 @@ languages = [
 
 # Definieren einer Variable, die die aktuelle Datei zum Zentrum
 # der Anwendung macht.
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static', static_folder='static')
 
 """
 Festlegen einer Route für die Homepage. Der String in den Klammern
