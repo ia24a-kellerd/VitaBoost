@@ -27,6 +27,7 @@ body {
     font-weight: bold;
     margin-bottom: 20px;
     font-family: MedievalSharp sans-serif;
+    text-decoration: none
 }
 
 .links ul {
@@ -58,14 +59,16 @@ body {
 
 }
 
+.icons img {
+    filter: invert(1);
+}
+
 .profile {
     width: 30px;
     height: 30px;
-    filter: invert(1);
 }
 
 .cart {
     width: 30px;
     height: 30px;
-    filter: invert(1);
 }
