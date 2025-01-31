@@ -1,12 +1,42 @@
 {% extends 'header.html' %}
 
+{% block style %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css') }}">
+{% endblock %}
+
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<h1>Welcome</h1>
-<form action="{{ url_for('submit') }}" method="post">
-    <label for="name">Enter your name:</label>
-    <input type="text" id="name" name="name">
-    <button type="submit">Submit</button>
-</form>
-{% endblock %}
+    <div class="home_body1">
+        <h1>Just Boost It!</h1>
+        <h2>Follow Us!</h2>
+        <div class="socials">
+            <a href="https://www.instagram.com/vita_boost2024/" target="_blank"><img
+                    src="{{ url_for('static', filename='assets/socials/insta_logo.png') }}" alt=""></a>
+            <a href="https://www.tiktok.com/vita_boost/" target="_blank"><img class="tiktok"
+                    src="{{ url_for('static', filename='assets/socials/tiktok_logo.png') }}" alt=""></a>
+
+        </div>
+    </div>
+    <div class="home_body2">
+    <div class="da_three_drinks">
+        <div class="original">
+            <img src="{{ url_for('static', filename='assets/bottles/original.PNG') }}">
+            <h3 class="drink_title">Original Edition</h3>
+            <p>Unser Klassiker und der Ursprung von VitaBoost! Die Original Edition kombiniert natürliche Aromen mit einer sorgfältig ausgewählten Mischung aus essenziellen Vitaminen, um dir Energie und Vitalität für deinen Alltag zu schenken. Perfekt für unterwegs, beim Sport oder als erfrischender Begleiter im Büro.</p>
+        </div>
+        <div class="blue">
+            <img src="{{ url_for('static', filename='assets/bottles/blueice.PNG') }}">
+            <h3 class="drink_title">Blue Ice Edition</h3>
+            <p>Die Blue Ice Edition bietet eine erfrischende Mischung aus intensiven Beerenaromen und einem eisigen Finish. Dieses vitamingeladene Getränk liefert dir nicht nur Energie, sondern auch ein unvergleichlich frisches Geschmackserlebnis – perfekt für jede Gelegenheit.</p>
+        </div>
+        <div class="bloody">
+            <img src="{{ url_for('static', filename='assets/bottles/bloodymary.PNG') }}">
+            <h3 class="drink_title">Bloody Mary Edition</h3>
+            <p>Die Bloody Mary Edition kombiniert den süßen Geschmack von saftiger Wassermelone mit der exotischen Note von Drachenfrucht. Dieses vitamingeladene Getränk steht für einen unverwechselbaren Genuss – ideal, um den Tag mit Energie und Geschmack zu beleben.</p>
+        </div>
+    </div>
+    </div>
+    <div class="home_body3"></div>
+    <div class="home_newsletter"></div>
+{% endblock %}25

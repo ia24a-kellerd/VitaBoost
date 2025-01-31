@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/header.css') }}">
+    {% block style %}{% endblock %}
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
@@ -24,7 +25,6 @@
         <a class="profile" href="{{ url_for('get_languages') }}"><img class="profile" src="{{ url_for('static', filename='assets/icons/user.png') }}" alt=""></a>
         <a class="cart" href="{{ url_for('get_languages') }}"><img class="cart" src="{{ url_for('static', filename='assets/icons/shopping-cart.png') }}" alt=""></a>
     </div>
-
 </div>
 
 {% block content %}

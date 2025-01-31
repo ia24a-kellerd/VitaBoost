@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: black;
+}
+.home_body1 {
+    background: #E6E6E6;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+.home_body1 .socials {
+    display: flex;
+    flex-direction: row;
+}
+
+.home_body1 .socials img {
+    width: 30px;
+    height: auto;
+    margin: 0 10px;
+}
+
+.home_body1 .socials .tiktok {
+    width: 38px;
+    height: auto;
+    margin: -5px 10px;
+}
