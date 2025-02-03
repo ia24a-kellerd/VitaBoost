@@ -1,19 +1,85 @@
-<!-- /templates/about_flask.html -->
-{% extends 'base.html' %}
+{% extends 'header.html' %}
 
-{% block title %}About Flask{% endblock %}
+{% block title %}About{% endblock %}
 
 {% block content %}
-<h1>About Flask</h1>
-<p>
-    Flask is a lightweight WSGI web application framework. It is designed to make getting started quick and easy, with
-    the ability to scale up to complex applications. It began as a simple wrapper around Werkzeug and Jinja and has
-    become one of the most popular Python web application frameworks.
-</p>
-<p>
-    Flask offers suggestions, but doesn't enforce any dependencies or project layout. It is up to the developer to
-    choose
-    the tools and libraries they want to use. There are many extensions provided by the community that make adding new
-    functionality easy.
-</p>
+<div class="all">
+    <div class="first">
+        <div class="one">Idea:</div>
+        <div class="idea">
+            Die Idee für VitaBoost kam uns, weil wir ein Getränk wollten, das nicht nur gesund ist, sondern auch richtig
+            gut schmeckt. Viele Vitamingetränke, die wir ausprobiert haben, waren entweder langweilig oder schmeckten
+            künstlich. Wir dachten uns "Das muss besser gehen." Also haben wir angefangen, selbst zu experimentieren.
+            Nach vielen Tests sind drei besondere Sorten entstanden. Blue Ice, ein türkisblauer Drink welcher
+            erfrischend und belebend ist, fast ein Sprung in einen kalten Bergsee. Bloody Marry ist kräftig rot und
+            bringt dir einen frischen Kick, wenn du neue Energie brauchst. Original leuchtet sonnig - gelb und schmeckt
+            einfach immer, perfekt für jeden Tag. Unser Ziel war es, ein Getränk zu kreieren, das nicht nur gesund ist,
+            sondern auch Freude bereitet. VitaBoost soll zeigen, dass gesunde Getränke Spass machen und nicht langweilig
+            oder fade sein müssen. Jedes unserer Drinks ist mit hochwertigen Zutaten hergestellt, frei von künstlichen
+            Zusatzstoffen und perfekt ausbalanciert im Geschmack. Wir glauben daran, dass gesunde Ernährung kein
+            Kompromiss sein sollte - und genau das möchten wir mit VitaBoost beweisen.
+        </div>
+    </div>
+    <div class="second">
+        <div class="two">Creators:</div>
+        <div class="creators">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col">
+                        <h4>Levin - Creative Director</h4>
+                        Levin ist das kreative Herz unseres Teams. Er entwickelt die Ideen für unsere Sorten und legt
+                        grossen Wert auf das perfekte Zusammenspiel von Geschmack, Farbe und Präsentation.
+                    </div>
+                    <div class="col">
+                        <h4>Jan - Chief Financial Officer (CFO)</h4>
+                        Jan hat den Überblick über Zahlen, Finanzen und strategische Entscheidungen. Er sorgt dafür,
+                        dass wir immer effizient und wirtschaftlich arbeiten. Mit seinem Organisationstalent hält er
+                        alle Fäden zusammen und schafft die Grundlage für unseren Wachstum.
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4>Dan - Head of Product Development</h4>
+                        Dan ist unser Geschmackstüftler. Er experimentiert mit Aromen und Rezepturen, bis jedes Getränk
+                        seinen einzigartigen Charakter bekommt. Durch seine Arbeit sind Blue Ice, Bloody Marry und
+                        Original nicht nur gesund, sondern überzeugen auch mit ihrem perfekten Geschmack.
+                    </div>
+                    <div class="col">
+                        <h4>Callum - Chief Operations Officer (COO)</h4>
+                        Callum ist für die Produktionsprozesse verantwortlich und sorgt dafür, dass alles reibungslos
+                        läuft. Egal ob Maschinen, Abläufe oder technische Herausforderungen - Callum findet immer eine
+                        Lösung und stellt sicher, dass unsere Drinks in Top-Qualität entstehen.
+                    </div>
+                    <div class="col">
+                        <h4>Blenda - Marketing & Communications Manager</h4>
+                        Blenda kümmert sich darum, dass VitaBoost gehört und gesehen wird. Sie entwickelt kreative
+                        Marketingkampagnen und spricht mit Kunden, Partnern und der Community. Ihre Leidenschaft für
+                        Kommunikation bringt unsere Marke nach aussen und sorgt für Begeisterung.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+    <a class="logo" href="{{ url_for('home') }}"><img class="logo" src="{{ url_for('static', filename='assets/logos/logo.png') }}" alt=""></a>
+    <div class="middle">
+        <a class="title" href="{{ url_for('home') }}"><h1 class="title">VitaBoost</h1></a>
+        <nav class="links">
+            <ul>
+                <li><a href="{{ url_for('home') }}">Shop</a></li>
+                <li><a href="{{ url_for('about_flask') }}">About Us</a></li>
+                <li><a href="{{ url_for('get_languages') }}">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="icons">
+        <a class="profile" href="{{ url_for('get_languages') }}"><img class="profile" src="{{ url_for('static', filename='assets/icons/user.png') }}" alt=""></a>
+        <a class="cart" href="{{ url_for('get_languages') }}"><img class="cart" src="{{ url_for('static', filename='assets/icons/shopping-cart.png') }}" alt=""></a>
+    </div>
+</div>
+    </div>
+</div>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
 {% endblock %}
