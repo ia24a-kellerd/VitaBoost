@@ -18,14 +18,15 @@
 
 .one {
     margin-top: 100px;
+    color: #283557;
 }
 
 .idea {
     font-size: 20px;
-    color: black;
+    color: #283557;
     margin-bottom: 30px;
     text-align: justify;
-    max-width: 800px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
