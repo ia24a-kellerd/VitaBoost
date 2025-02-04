@@ -9,7 +9,7 @@
     left: -20px;
 }
 
-.one, .two {
+.one, .two, .three {
     text-align: center;
     font-weight: bold;
     font-size: 60px;
@@ -26,7 +26,7 @@
     color: #283557;
     margin-bottom: 30px;
     text-align: justify;
-    max-width: 1200px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
@@ -35,14 +35,15 @@
 .second {
     background-color: #283557;
     color: white;
-    padding: 80px;
+    padding: 150px;
     margin-top: 200px;
     width: 100vw;
     box-sizing: border-box;
+    padding-bottom: 200px;
 }
 
 .col {
-    padding: 30px;
+    padding: 25px;
 }
 
 .footer {
@@ -50,10 +51,21 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1px 30px;
-    padding-top: 200px;
+    padding: 10px 30px;
+    width: 100vw;
+    box-sizing: border-box;
 }
 
 .logo {
     height: 100px;
 }
+
+.third {
+    color: #283557;
+    padding: 100px;
+    margin-top: 50px;
+    width: 100vw;
+    box-sizing: border-box;
+    padding-bottom: 200px;
+}
+
