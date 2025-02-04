@@ -1,26 +1,47 @@
-{% extends 'base.html' %}
+{% extends 'header.html' %}
 
-{% block title %}Languages{% endblock %}
+{% block title %}Contact{% endblock %}
 
 {% block content %}
-<h1>Programming Languages</h1>
-<table border="1">
-    <caption>programming languages</caption>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Creator</th>
-            <th>Year</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for language in languages %}
-        <tr>
-            <td>{{ language.name }}</td>
-            <td>{{ language.creator }}</td>
-            <td>{{ language.year }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+<div class="alll">
+    <div class="rectangle">
+        <div class="titel">Contact Us</div>
+        <div class="input">
+            <form>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Name</label>
+                    <input type="name" class="form-control" id="exampleFormControlInput1">
+                    <label for="exampleFormControlInput1">Email address</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput2"
+                           placeholder="name@example.com">
+                    <label for="exampleFormControlInput1">Phone Number</label>
+                    <input type="number" class="form-control" id="exampleFormControlInput3">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Message</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                </div>
+            </form>
+        </div>
+        <div class="subtitle">Contact Details</div>
+        <div class="details">
+            <div>VitaBoost@mail.com</div>
+            <div>+41 077 266 93 12</div>
+            <div>8005 Zürich</div>
+            <div>Neue Hard 9</div>
+        </div>
+        <a href="{{ url_for('home') }}">
+            <button class="btnn">Send</button>
+        </a>
+
+
+    </div>
+</div>
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+          rel="stylesheet">
+</head>
+
+
 {% endblock %}
