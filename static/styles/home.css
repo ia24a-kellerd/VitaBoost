@@ -87,9 +87,22 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #E6E6E6;
+    padding-bottom: 5%;
 }
 
 .johann{
     width: 10%;
 }
 
+.zitats{
+    font-size: 20px;
+    color: rgb(161, 161, 161);
+    padding-bottom: 1%;
+}
+
+.wolfgang{
+    font-family: "Georgia", sans-serif;
+    font-size: 14px;
+    color: rgb(161, 161, 161);
+    font-style: italic;
+}
