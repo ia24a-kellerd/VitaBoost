@@ -59,6 +59,20 @@ def result(name) -> str:
 def get_languages() -> str:
     return render_template("languages.html", languages=languages)
 
+@app.route("/profile")
+def profile() -> str:
+    return render_template("profile.html")
+
+
+@app.route("/warenkorb")
+def cart() -> str:
+    return render_template("cart.html")
+
+
+@app.route("/shop")
+def shop() -> str:
+    return render_template("shop.html")
+
 
 ###########################
 # BEISPIELE
@@ -67,6 +81,9 @@ def get_languages() -> str:
 def hello_world() -> str:
     # Die Anzeigefunktion 'hello_world' gibt den String "Hello, World" als Antwort zurück
     return 'Hello, World!'
+
+
+
 
 
 if __name__ == '__main__':
