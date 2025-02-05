@@ -1,0 +1,23 @@
+{% extends 'header.html' %}
+
+{% block title %}Account settings{% endblock %}
+
+
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/shop.css') }}">
+<body>
+    <div class="drinks">
+        <div class="blue">
+            <h1>Blue Ice Edition</h1>
+            <p class="blue_text">Tauche ein in die pure Erfrischung mit Blue Ice Edition – dem ultimativen Vitamingetränk für einen aktiven Lebensstil! Die eisblaue Formel kombiniert essentielle Vitamine mit einem belebenden Geschmack, der dich jederzeit mit neuer Energie versorgt.</p>
+            <img src="{{ url_for('static', filename='assets/bottles/blueice.PNG') }}">
+        </div>
+        <div class="red"></div>
+        <div class="yellow"></div>
+    </div>
+</body>
+
+
+{% include 'footer.html' %}
+{% endblock %}
