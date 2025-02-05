@@ -1,0 +1,37 @@
+<!-- /templates/footer.html -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/footer.css') }}">
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<footer class="footer">
+    <div class="middle">
+        <a class="title" href="{{ url_for('home') }}"><h2 class="title">VitaBoost</h2></a>
+        <nav class="links">
+            <ul>
+                <li><a href="{{ url_for('home') }}">Shop</a></li>
+                <li><a href="{{ url_for('about_flask') }}">About Us</a></li>
+                <li><a href="{{ url_for('get_languages') }}">Contact</a></li>
+                <li><a href="{{ url_for('profile') }}">Account</a></li>
+            </ul>
+        </nav>
+<div class="Adress">
+    <em id="adress" for="adress">Neue Hard 9, 8005 Zürich
+
+© 2025 VitaBoost.  All rights reserved.</em>
+
+
+</div>
+    </div>
+
+</footer>
+
+</body>
+</html>
+
