@@ -15,7 +15,7 @@
         <a class="title" href="{{ url_for('home') }}"><h1 class="title">VitaBoost</h1></a>
         <nav class="links">
             <ul>
-                <li><a href="{{ url_for('home') }}">Shop</a></li>
+                <li><a href="{{ url_for('shop') }}">Shop</a></li>
                 <li><a href="{{ url_for('about_flask') }}">About Us</a></li>
                 <li><a href="{{ url_for('get_languages') }}">Contact</a></li>
             </ul>
@@ -29,5 +29,7 @@
 
 {% block content %}
 {% endblock %}
+
+{% include 'footer.html' %}
 </body>
 </html>

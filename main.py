@@ -69,6 +69,11 @@ def cart() -> str:
     return render_template("cart.html")
 
 
+@app.route("/shop")
+def shop() -> str:
+    return render_template("shop.html")
+
+
 ###########################
 # BEISPIELE
 ###########################
@@ -76,6 +81,9 @@ def cart() -> str:
 def hello_world() -> str:
     # Die Anzeigefunktion 'hello_world' gibt den String "Hello, World" als Antwort zurück
     return 'Hello, World!'
+
+
+
 
 
 if __name__ == '__main__':

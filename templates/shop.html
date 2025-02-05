@@ -5,19 +5,50 @@
 
 
 {% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='styles/shop.css') }}">
-<body>
-    <div class="drinks">
-        <div class="blue">
-            <h1>Blue Ice Edition</h1>
-            <p class="blue_text">Tauche ein in die pure Erfrischung mit Blue Ice Edition – dem ultimativen Vitamingetränk für einen aktiven Lebensstil! Die eisblaue Formel kombiniert essentielle Vitamine mit einem belebenden Geschmack, der dich jederzeit mit neuer Energie versorgt.</p>
-            <img src="{{ url_for('static', filename='assets/bottles/blueice.PNG') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/shop.css') }}">
+    <div class="shop_body">
+        <div class="drinks">
+            <div class="blue">
+                <div class="text_group">
+                    <h1>Blue Ice Edition</h1>
+                    <p class="text">Tauche ein in die pure Erfrischung mit Blue Ice Edition – dem ultimativen
+                        Vitamingetränk für einen aktiven Lebensstil! Die eisblaue Formel kombiniert essentielle Vitamine
+                        mit
+                        einem belebenden Geschmack, der dich jederzeit mit neuer Energie versorgt.</p>
+                </div>
+                <img src="{{ url_for('static', filename='assets/bottles/blueice.PNG') }}">
+                <button>Add to Cart</button>
+            </div>
+            <div class="red">
+                <button>Add to Cart</button>
+                <img src="{{ url_for('static', filename='assets/bottles/bloodymary.PNG') }}">
+                <div class="text_group">
+                    <h1>Bloody Mary Edition</h1>
+                    <p class="text">Erlebe mit Bloody Mary Edition eine einzigartige Kombination aus feuriger Würze und
+                        wertvollen Vitaminen. Dieses außergewöhnliche Vitamingetränk verbindet intensive Aromen mit
+                        einer
+                        belebenden Rezeptur, die dich in jeder Situation stärkt. Perfekt für alle, die den besonderen
+                        Geschmack
+                        lieben und keine Kompromisse bei ihrer Energie machen!</p>
+                </div>
+            </div>
+            <div class="yellow">
+                <div class="text_group">
+                    <h1>Original Edition</h1>
+                    <p class="text">Mit Original Edition bekommst du den unverfälschten, erfrischenden Geschmack eines
+                        echten Vitamingetränks. Die ausgewogene Mischung aus essenziellen Vitaminen und natürlichen
+                        Aromen
+                        sorgt
+                        für neue Energie – egal, ob im Alltag, beim Sport oder in deiner Freizeit. Klassisch, belebend
+                        und
+                        immer
+                        die richtige Wahl!</p>
+                </div>
+                <img src="{{ url_for('static', filename='assets/bottles/original.PNG') }}">
+                <button>Add to Cart</button>
+            </div>
         </div>
-        <div class="red"></div>
-        <div class="yellow"></div>
     </div>
-</body>
 
 
-{% include 'footer.html' %}
 {% endblock %}
