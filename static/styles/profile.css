@@ -1,82 +1,109 @@
+
 body {
+    background-color: #f4f4f4;
     margin: 0;
     font-family: Arial, sans-serif;
 }
 
-.header {
-    background-color: #2e3553;
+.container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 30px;
+    height: calc(100vh - 120px);
+    background-color: white;
 }
 
-.logo {
-    height: 100px;
-}
-
-.middle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.title {
+.sidebar {
+    width: 180px;
+    background-color: #e6e6e6;
+    padding: 20px;
     color: white;
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    font-family: MedievalSharp sans-serif;
-    text-decoration: none
+
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.links ul {
+.sidebar-nav ul {
     list-style: none;
-    display: flex;
-    gap: 20px;
-    margin: 0;
     padding: 0;
 }
 
-.links ul li {
-    display: inline;
+.sidebar-nav ul li {
+    margin: 15px 0;
 }
 
-.links ul li a {
+.sidebar-nav, ul, li, a {
     text-decoration: none;
-    color: white;
-    font-size: 24px;
+    font-size: 18px;
+    color: black;
 }
 
-.links ul li:not(:last-child) {
-    border-right: 1px solid white;
-    padding-right: 20px;
+.sidebar-nav ul li a:hover {
+    text-decoration: underline;
 }
 
-.icons {
-    display: flex;
-    gap: 15px;
+.content {
+    flex-grow: 1;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 
 }
 
-.icons img {
-    filter: invert(1);
+h2 {
+    text-align: center;
+    color: #2e3553;
 }
 
-.profile {
-    width: 30px;
-    height: 30px;
-}
-
-.cart {
-    width: 30px;
-    height: 30px;
-}
-
-.container {
+.form {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    background-color: #e5e5e5;
 }
+
+.form label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.form input, .form textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.form button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #e6e6e6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form button:hover {
+    background-color: #1f2742;
+}
+
+.headline {
+    font-weight: bold;
+}
+
+select.options {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+}
+
+select.options:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+
 

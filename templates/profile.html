@@ -1,40 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Profile</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles/profile.css') }}">
-</head>
-<body>
-<div class="header">
-  <a class="logo" href="{{ url_for('home') }}"><img class="logo" src="{{ url_for('static', filename='assets/logos/logo.png') }}" alt=""></a>
-  <div class="middle">
-    <a class="title" href="{{ url_for('home') }}"><h1 class="title">VitaBoost</h1></a>
-    <nav class="links">
-      <ul>
-        <li><a href="{{ url_for('home') }}">Shop</a></li>
-        <li><a href="{{ url_for('about_flask') }}">About Us</a></li>
-        <li><a href="{{ url_for('get_languages') }}">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-  <div class="icons">
-    <a class="profile" href="{{ url_for('get_languages') }}"><img class="profile" src="{{ url_for('static', filename='assets/icons/user.png') }}" alt=""></a>
-    <a class="cart" href="{{ url_for('get_languages') }}"><img class="cart" src="{{ url_for('static', filename='assets/icons/shopping-cart.png') }}" alt=""></a>
-  </div>
+{% extends 'header.html' %}
 
-</div>
-<div class="container">
-  <div class="header">Profil & Passwort</div>
-  <div class="item">Zahlungsmöglichkeiten</div>
-  <div class="item">Rechungsadresse</div>
-  <div class="item">Sicherheit</div>
-  <div class="item">Integrationen</div>
-  <div class="item">Benachrichtigungen</div>
-  <div class="lastItem">Account löschen</div>
-</div>
+{% block title %}Account settings{% endblock %}
 
 {% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/profile.css') }}">
+
+<div class="container">
+    <aside class="sidebar">
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="headline"><p>Profil & Passwort</p></li>
+                <li class="line"><a>Rechnungsadresse</a></li>
+                <li class="line"><a>Sicherheit</a></li>
+                <li class="line"><a>Passwort ändern</a></li>
+                <li class="line"><a>Benachrichtigungen</a></li>
+                <li class="baseline" style="color: red; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'"><p>Account löschen...</p></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="content">
+        <h2>VitaBoost-Account erstellen</h2>
+        <form class="form">
+            <label for="name">Voller Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">E-Mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+
+            <label>Geburtsjahr:</label>
+            <select class="options">
+                <option class="item active">2025</option>
+                {% for year in range(2024, 1899, -1) %}
+                <option class="item">{{ year }}</option>
+                {% endfor %}
+            </select>
+
+
+            <button type="submit">Account erstellen</button>
+        </form>
+    </main>
+</div>
+
+{% include 'footer.html' %}
 {% endblock %}
-</body>
-</html>

@@ -59,6 +59,15 @@ def result(name) -> str:
 def get_languages() -> str:
     return render_template("languages.html", languages=languages)
 
+@app.route("/profile")
+def profile() -> str:
+    return render_template("profile.html")
+
+
+@app.route("/warenkorb")
+def cart() -> str:
+    return render_template("cart.html")
+
 
 ###########################
 # BEISPIELE

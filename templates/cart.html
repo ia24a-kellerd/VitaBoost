@@ -1,0 +1,34 @@
+{% extends 'header.html' %}
+
+{% block title %}Account settings{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/cart.css') }}">
+<body>
+<div class="headline">Warenkorb<div>
+    <div class="inhaltWarenkorb">Es befinden sich noch keine Produkte im Warenkorb</div>
+    <button>Jetzt shoppen!</button>
+
+
+<div class="container">
+
+
+    <div class="zahlungsContainer">
+        <div class="Titel">Zusammenfassung</div>
+        <div class="zwischenSumme">Voraussichtliche Versand- und Abfertigungskosten</div>
+        <hr>
+        <div class="gesamt">Gesamt:</div>
+        <hr>
+        <button class="payment-button">
+            <img src="{{ url_for('static', filename='assets/logos/visa.png') }}" alt="VISA"></button>
+        <button class="payment-button">
+            <img src="{{ url_for('static', filename='assets/logos/twint.png') }}" alt="TWINT"></button>
+        <button class="payment-button">
+            <img src="{{ url_for('static', filename='assets/logos/paypal.png') }}" alt="PayPal"></button>
+    </div>
+
+
+</div>
+</body>
+{% include 'footer.html' %}
+{% endblock %}
