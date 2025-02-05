@@ -1,0 +1,95 @@
+/* Allgemeine Styles */
+.shop_body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5% 0;
+}
+
+.drinks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 70%;
+}
+
+/* Boxen für die Getränke */
+.blue, .red, .yellow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2% 5%;
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ccd;
+}
+
+.blue {
+    background-color: #d5f3ff;
+    border-color: #a3e0ff;
+}
+
+.red {
+    background-color: #ffd6cc;
+    border-color: #ff9980;
+}
+
+.yellow {
+    background-color: #fff0cc;
+    border-color: #ffdb80;
+}
+
+.blue .text {
+    color: darkcyan;
+}
+
+.red .text {
+    color: darkred;
+}
+
+.yellow .text {
+    color: darkgoldenrod;
+}
+
+/* Überschriften */
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.text_group {
+    width: 50%;
+}
+
+/* Textabschnitt */
+.text {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Bilder */
+.drinks img {
+    width: 25%;
+    height: auto;
+    margin-left: 20px;
+}
+
+/* Button Styling */
+button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-top: 25%;
+}
+
+button:hover {
+    background-color: #555;
+}

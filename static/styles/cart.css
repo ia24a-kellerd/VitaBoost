@@ -1,0 +1,40 @@
+body {
+    height: 100vh;
+}
+
+
+
+.payment-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 250px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.payment-button:hover {
+    background-color: #e0e0e0;
+}
+
+.payment-button img  {
+    width: 30px;
+    height: auto;
+}
+
+
+.zahlungsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+/*
+
+.gesamt, .headline, .Titel {
+    font-weight: bold;
+
+}*/
