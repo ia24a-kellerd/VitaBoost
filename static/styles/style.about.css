@@ -1,0 +1,59 @@
+.all {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    position: relative;
+    left: -20px;
+}
+
+.one, .two {
+    text-align: center;
+    font-weight: bold;
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.one {
+    margin-top: 100px;
+    color: #283557;
+}
+
+.idea {
+    font-size: 20px;
+    color: #283557;
+    margin-bottom: 30px;
+    text-align: justify;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.second {
+    background-color: #283557;
+    color: white;
+    padding: 80px;
+    margin-top: 200px;
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+.col {
+    padding: 30px;
+}
+
+.footer {
+    background-color: #283557;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1px 30px;
+    padding-top: 200px;
+}
+
+.logo {
+    height: 100px;
+}
