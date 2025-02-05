@@ -1,4 +1,4 @@
-.alll {
+/*.alll {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,10 +40,105 @@
     color: #283557;
     margin-left: 1100px;
     margin-top: -350px;
-    /*margin-bottom: 200px;*/
+    /*margin-bottom: 200px;
 }
 
 .details {
     margin-left: 1125px;
+}*/
 
+.alll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+
+.rectangle {
+    width: 90%; /* Statt 1550px */
+    max-width: 1550px; /* Falls Bildschirm groß ist, bleibt es begrenzt */
+    height: 70vh; /* Statt 650px */
+    border: 3px solid black;
+    padding: 2%;
+}
+
+.btnn {
+    background-color: #283557;
+    color: white;
+    padding: 0.5vw 1.5vw; /* Dynamische Größe */
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1vw;
+    margin-left: auto; /* Button nach rechts schieben */
+    display: block;
+    width: fit-content;
+    margin-right: 5%;
+}
+
+.titel {
+    color: #283557;
+    text-align: center;
+    font-weight: bold;
+    font-size: 3vw; /* Statt 40px */
+    padding-bottom: 5vh;
+}
+
+.form-group {
+    margin-left: 5%; /* Statt 200px */
+    margin-right: 20%; /* Statt 700px */
+}
+
+.subtitle {
+    font-weight: bold;
+    font-size: 2vw; /* Statt 25px */
+    color: #283557;
+    margin-left: auto;
+    margin-right: 5%;
+    margin-top: -20vh; /* Statt -350px */
+    text-align: right;
+}
+
+.details {
+    margin-left: auto;
+    margin-right: 5%;
+    text-align: right;
+}
+
+/* Responsive Anpassungen für kleinere Bildschirme */
+@media (max-width: 1200px) {
+    .form-group {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .subtitle, .details {
+        margin-left: 5%;
+        margin-right: 5%;
+        text-align: center;
+        margin-top: 2vh;
+    }
+
+    .btnn {
+        width: 100%;
+        text-align: center;
+        margin: 2vh auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .rectangle {
+        width: 95%;
+        height: auto;
+    }
+
+    .btnn {
+        width: 100%;
+        text-align: center;
+        padding: 1vh;
+    }
+
+    .subtitle, .details {
+        text-align: center;
+        margin: 10px 0;
+    }
 }
