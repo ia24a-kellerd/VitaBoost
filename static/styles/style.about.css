@@ -1,0 +1,70 @@
+.all {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    position: relative;
+    left: -20px;
+}
+
+.one, .two, .three {
+    text-align: center;
+    font-weight: bold;
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.one {
+    margin-top: 100px;
+    color: #283557;
+}
+
+.idea {
+    font-size: 20px;
+    color: #283557;
+    margin-bottom: 30px;
+    text-align: justify;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.second {
+    background-color: #283557;
+    color: white;
+    padding: 150px;
+    margin-top: 200px;
+    width: 100vw;
+    box-sizing: border-box;
+    padding-bottom: 200px;
+}
+
+.col {
+    padding: 25px;
+}
+
+.footer {
+    background-color: #283557;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+.logo {
+    height: 100px;
+}
+
+.third {
+    color: #283557;
+    padding: 100px;
+    margin-top: 50px;
+    width: 100vw;
+    box-sizing: border-box;
+    padding-bottom: 200px;
+}
