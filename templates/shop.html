@@ -17,10 +17,10 @@
                         einem belebenden Geschmack, der dich jederzeit mit neuer Energie versorgt.</p>
                 </div>
                 <img src="{{ url_for('static', filename='assets/bottles/blueice.PNG') }}">
-                <button>Add to Cart</button>
+                <a href="{{ url_for('cart') }}"><button>Add to Cart</button></a>
             </div>
             <div class="red">
-                <button>Add to Cart</button>
+                <a href="{{ url_for('cart') }}"><button>Add to Cart</button></a>
                 <img src="{{ url_for('static', filename='assets/bottles/bloodymary.PNG') }}">
                 <div class="text_group">
                     <h1>Bloody Mary Edition</h1>
@@ -45,7 +45,7 @@
                         die richtige Wahl!</p>
                 </div>
                 <img src="{{ url_for('static', filename='assets/bottles/original.PNG') }}">
-                <button>Add to Cart</button>
+                <a href="{{ url_for('cart') }}"><button>Add to Cart</button></a>
             </div>
         </div>
     </div>

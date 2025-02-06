@@ -78,6 +78,10 @@ h1 {
 }
 
 /* Button Styling */
+.drinks a {
+    margin-top: 25%;
+}
+
 button {
     background-color: #333;
     color: white;

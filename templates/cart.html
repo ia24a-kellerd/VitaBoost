@@ -1,16 +1,15 @@
 {% extends 'header.html' %}
 
-{% block title %}Account settings{% endblock %}
+{% block title %}Cart{% endblock %}
+
+{% block style %}<link rel="stylesheet" href="{{ url_for('static', filename='styles/cart.css') }}">{% endblock %}
 
 {% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='styles/cart.css') }}">
-
-<div>
     <div class="container">
         <div class="left">
             <h1 class="headline">Warenkorb</h1>
             <div class="inhaltWarenkorb">Es befinden sich noch keine Produkte im Warenkorb</div>
-            <button class="shoppen">Jetzt shoppen!</button>
+            <a href="{{ url_for('shop') }}"><button class="shoppen">Jetzt shoppen!</button></a>
         </div>
         <div class="zahlungsContainer">
             <h2 class="Titel">Zusammenfassung</h2>
@@ -42,5 +41,4 @@
                 <img class="logos" src="{{ url_for('static', filename='assets/logos/paypal.png') }}" alt="PayPal"></button>
         </div>
     </div>
-</div>
 {% endblock %}
