@@ -1,15 +1,24 @@
 body {
     height: 100vh;
 }
-
-
+.left{
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    font-size: 20px;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
 .payment-button {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    width: 250px;
+    width: 100%;
     padding: 10px;
     border: 2px solid #ccc;
     border-radius: 25px;
@@ -22,7 +31,7 @@ body {
 }
 
 .payment-button img  {
-    width: 30px;
+    width: 80px;
     height: auto;
 }
 
@@ -31,7 +40,53 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    padding-top: 6%;
+    padding-right: 12%;
+    font-size: 130%;
 }
+
+
+
+
+
+.shoppen{
+    height: auto;
+    width: 40%;
+    margin-top: 5%;
+    border-radius: 15px;
+    background-color: dodgerblue;
+    color: white;
+    font-size: 100%;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+h1{
+}
+
+.absatz{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 3%;
+}
+
+.gesamt {
+    font-weight: bold;
+    padding-top: 3%;
+    padding-bottom: 0%;
+}
+
+.voraus{
+    display: flex;
+    width: 100%;
+}
+
+.linie{
+    font-size: 100%;
+    color: lightgray;
+    padding-bottom: 3%;
+}
+
 /*
 
 .gesamt, .headline, .Titel {
