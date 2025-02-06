@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/header.css') }}">
+
+    <link rel="icon" href="{{ url_for('static', filename='assets/logos/favicon.ico') }}" type="image/x-icon">
+
     {% block style %}{% endblock %}
     <title>{% block title %}{% endblock %}</title>
 </head>
@@ -17,13 +20,13 @@
             <ul>
                 <li><a href="{{ url_for('shop') }}">Shop</a></li>
                 <li><a href="{{ url_for('about_flask') }}">About Us</a></li>
-                <li><a href="{{ url_for('get_languages') }}">Contact</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
             </ul>
         </nav>
     </div>
     <div class="icons">
-        <a class="profile" href="{{ url_for('get_languages') }}"><img class="profile" src="{{ url_for('static', filename='assets/icons/user.png') }}" alt=""></a>
-        <a class="cart" href="{{ url_for('get_languages') }}"><img class="cart" src="{{ url_for('static', filename='assets/icons/shopping-cart.png') }}" alt=""></a>
+        <a class="profile" href="{{ url_for('contact') }}"><img class="profile" src="{{ url_for('static', filename='assets/icons/user.png') }}" alt=""></a>
+        <a class="cart" href="{{ url_for('contact') }}"><img class="cart" src="{{ url_for('static', filename='assets/icons/shopping-cart.png') }}" alt=""></a>
     </div>
 </div>
 

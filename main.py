@@ -55,9 +55,9 @@ def result(name) -> str:
     return render_template("result.html", name=name)
 
 
-@app.route("/get_languages")
-def get_languages() -> str:
-    return render_template("languages.html", languages=languages)
+@app.route("/contact")
+def contact() -> str:
+    return render_template("contact.html")
 
 @app.route("/profile")
 def profile() -> str:

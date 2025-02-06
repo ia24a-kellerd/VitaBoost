@@ -1,0 +1,134 @@
+/*
+.alll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10vh 0;
+}
+
+.rectangle {
+    width: 90%;
+    max-width: 1550px;
+    height: auto;
+    min-height: 50vh;
+    border: 3px solid black;
+    padding: 2%;
+}
+
+.titel {
+    color: #283557;
+    text-align: center;
+    font-weight: bold;
+    font-size: 3vw;
+    padding-bottom: 5vh;
+}
+
+.subtitle {
+    font-weight: bold;
+    font-size: 2vw;
+    color: #283557;
+    text-align: right;
+}
+
+@media (max-width: 1200px) {
+    .rectangle {
+        width: 95%;
+        height: auto;
+        padding: 5%;
+    }
+
+    .subtitle, .details {
+        margin: 2vh 0;
+        text-align: center;
+    }
+
+    .btnn {
+        width: 100%;
+        text-align: center;
+        margin: 2vh auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .alll {
+        padding: 5vh 0;
+    }
+
+    .rectangle {
+        width: 95%;
+        height: auto;
+        padding: 5%;
+    }
+
+    .subtitle, .details {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .btnn {
+        width: 100%;
+        text-align: center;
+        padding: 1vh;
+    }
+}
+*/
+
+.alll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10vh 5%;
+    box-sizing: border-box;
+}
+
+.rectangle {
+    width: 100%;
+    max-width: 1550px;
+    min-height: 50vh;
+    padding: 3% 3%;
+    border: 3px solid black;
+}
+
+.test {
+    display: flex;
+
+}
+
+.titel {
+    color: #283557;
+    text-align: center;
+    font-weight: bold;
+    font-size: 3vw;
+    padding-bottom: 5vh;
+}
+
+.subtitle, .details {
+    text-align: right;
+}
+
+.btnn {
+    background-color: #283557;
+    color: white;
+    padding: 7px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 95%;
+}
+
+.form-group {
+    width: 250%;
+    flex: 1;
+}
+
+.subtitle {
+    font-weight: bold;
+    font-size: 2vw;
+    color: #283557;
+    text-align: right;
+}
+
+.detailsBig {
+    flex: 1;
+}
+
