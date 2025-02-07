@@ -67,6 +67,10 @@ def profile() -> str:
 def login() -> str:
     return render_template("login.html")
 
+@app.route("/deleteaccount")
+def deleteaccount() -> str:
+    return render_template("deleteaccount.html")
+
 @app.route("/warenkorb")
 def cart() -> str:
     return render_template("cart.html")

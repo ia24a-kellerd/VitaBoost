@@ -121,6 +121,13 @@ login a {
     color: blue !important;
 }
 
+.deleteButton a:hover{
+    background-color: red;
 
+}
+
+.passwortEingabe {
+    font-size: 10px;
+}
 
 
