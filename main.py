@@ -63,6 +63,9 @@ def contact() -> str:
 def profile() -> str:
     return render_template("profile.html")
 
+@app.route("/login")
+def login() -> str:
+    return render_template("login.html")
 
 @app.route("/warenkorb")
 def cart() -> str:

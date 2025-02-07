@@ -1,0 +1,39 @@
+{% extends 'header.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/login.css') }}">
+
+<div class="container">
+    <aside class="sidebar">
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="headline"><p>Profil & Passwort</p></li>
+                <li class="line"><a>Rechnungsadresse</a></li>
+                <li class="line"><a>Sicherheit</a></li>
+                <li class="line"><a>Passwort ändern</a></li>
+                <li class="line"><a>Benachrichtigungen</a></li>
+                <li class="baseline" style="color: red; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'"><p>Account löschen...</p></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="content">
+        <h2>Login</h2>
+        <form class="form">
+
+            <label for="email">E-Mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+
+            <button type="submit">Login</button>
+            <li class="login"><a href="{{ url_for('profile') }}">Noch keinen Account?</a></li>
+        </form>
+    </main>
+</div>
+
+{% endblock %}

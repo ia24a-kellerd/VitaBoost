@@ -105,20 +105,20 @@ select.options:focus {
     outline: none;
 }
 
-
 .login {
-    padding: 2%;
+    padding: 5%;
     list-style-type: none;
+    color: blue;
     text-align: center;
 }
 
 .login a:hover {
     text-decoration: underline;
-    cursor: pointer;
 }
 
 login a {
     color: blue !important;
 }
+
 
 
