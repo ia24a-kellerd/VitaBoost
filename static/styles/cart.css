@@ -61,6 +61,17 @@ body {
     padding-top: 3px;
     padding-bottom: 3px;
 }
+.leeren{
+     height: auto;
+    width: 65%;
+    margin-top: 5%;
+    border-radius: 15px;
+    background-color: dodgerblue;
+    color: white;
+    font-size: 100%;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
 
 h1{
 }
@@ -86,6 +97,31 @@ h1{
     font-size: 100%;
     color: lightgray;
     padding-bottom: 3%;
+}
+li{
+    list-style-type: None;
+    display: flex;
+    justify-content: space-between;
+}
+span{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pricecontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    font-family: "Georgia", sans-serif;
+}
+.pricecart{
+    display: flex;
+    align-items: center;
+
+}
+.leeren{
+
 }
 
 /*
