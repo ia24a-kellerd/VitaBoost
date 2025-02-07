@@ -1,0 +1,42 @@
+{% extends 'header.html' %}
+
+{% block title %}Delete Account{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/login.css') }}">
+
+<div class="container">
+    <aside class="sidebar">
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="headline"><p>Profil & Passwort</p></li>
+                <li class="line"><a>Rechnungsadresse</a></li>
+                <li class="line"><a>Sicherheit</a></li>
+                <li class="line"><a>Passwort ändern</a></li>
+                <li class="line"><a>Benachrichtigungen</a></li>
+                <li class="baseline" style="color: red; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'"><a href="{{ url_for('deleteaccount') }}">Account löschen...</a></li>
+            </ul>
+            <a href="{{ url_for('login') }}">
+                <button>Login</button>
+            </a>
+
+        </nav>
+    </aside>
+
+    <main class="content">
+        <h2>Konto löschen</h2>
+        <form class="form">
+
+            <label class="frage">Möchtest du diesen Account wirklich löschen?</label>
+
+            <label class="passwortEingabe">Bitte gib zum Bestätigen dein Passwort ein!</label>
+            <input type="password" id="password" name="password" required>
+
+            <a href="{{ url_for('profile') }}">
+            <button class="deleteButton" type="submit">Konto endgültig löschen</button>
+                </a>
+        </form>
+    </main>
+</div>
+
+{% endblock %}
