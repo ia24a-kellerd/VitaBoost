@@ -41,12 +41,12 @@ body {
 
 .content {
     flex-grow: 1;
-    padding: 30px;
+    padding: 5%;
     background-color: white;
     border-radius: 10px;
     max-width: 600px;
-    margin: auto;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 50px auto;
 
 }
 
@@ -119,6 +119,11 @@ select.options:focus {
 
 login a {
     color: blue !important;
+}
+
+img {
+    width: 134px;
+    height: auto;
 }
 
 
