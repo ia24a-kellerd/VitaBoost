@@ -14,7 +14,8 @@
         {% if session.get('cart') %}
         <ul>
             {% for item in session['cart'] %}
-            <li>
+
+            <li class="itemBorder">
                 <div class="picture">
                     <img src="{{ item['image'] }}" alt="{{ item['name'] }}" width="100">
                 </div>
@@ -67,7 +68,9 @@
             <img class="logos" src="{{ url_for('static', filename='assets/logos/twint.png') }}" alt="TWINT">
         </button>
         <button class="payment-button">
-            <img class="logos" src="{{ url_for('static', filename='assets/logos/paypal.png') }}" alt="PayPal">
+            <img class="paypal" src="{{ url_for('static', filename='assets/logos/paypal.png') }}" alt="PayPal">
+        </button>
+        <button class="unsichtbar">
         </button>
     </div>
 </div>

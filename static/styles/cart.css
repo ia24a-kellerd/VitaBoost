@@ -120,13 +120,11 @@ span{
     align-items: center;
 
 }
-.leeren{
-
+.itemBorder{
+    padding: 10%;
 }
 
-/*
-
-.gesamt, .headline, .Titel {
-    font-weight: bold;
-
-}*/
+.unsichtbar {
+    opacity: 0;
+    height: 200px;
+}
