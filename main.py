@@ -106,5 +106,6 @@ def result(name) -> str:
     return render_template("result.html", name=name)
 
 
+
 if __name__ == '__main__':
     app.run(debug=True)  # Debug-Modus aktivieren
