@@ -1,78 +1,3 @@
-/*
-.alll {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10vh 0;
-}
-
-.rectangle {
-    width: 90%;
-    max-width: 1550px;
-    height: auto;
-    min-height: 50vh;
-    border: 3px solid black;
-    padding: 2%;
-}
-
-.titel {
-    color: #283557;
-    text-align: center;
-    font-weight: bold;
-    font-size: 3vw;
-    padding-bottom: 5vh;
-}
-
-.subtitle {
-    font-weight: bold;
-    font-size: 2vw;
-    color: #283557;
-    text-align: right;
-}
-
-@media (max-width: 1200px) {
-    .rectangle {
-        width: 95%;
-        height: auto;
-        padding: 5%;
-    }
-
-    .subtitle, .details {
-        margin: 2vh 0;
-        text-align: center;
-    }
-
-    .btnn {
-        width: 100%;
-        text-align: center;
-        margin: 2vh auto;
-    }
-}
-
-@media (max-width: 768px) {
-    .alll {
-        padding: 5vh 0;
-    }
-
-    .rectangle {
-        width: 95%;
-        height: auto;
-        padding: 5%;
-    }
-
-    .subtitle, .details {
-        text-align: center;
-        margin: 10px 0;
-    }
-
-    .btnn {
-        width: 100%;
-        text-align: center;
-        padding: 1vh;
-    }
-}
-*/
-
 .alll {
     display: flex;
     justify-content: center;
@@ -87,11 +12,13 @@
     min-height: 50vh;
     padding: 3% 3%;
     border: 3px solid black;
+    box-sizing: border-box;
 }
 
 .test {
     display: flex;
-
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .titel {
@@ -109,15 +36,17 @@
 .btnn {
     background-color: #283557;
     color: white;
-    padding: 7px 20px;
+    padding: 10px 20px;
     border-radius: 25px;
     cursor: pointer;
     font-size: 16px;
-    margin-left: 95%;
+    display: block;
+    margin: 20px auto;
+    border: none;
 }
 
 .form-group {
-    width: 250%;
+    width: 100%;
     flex: 1;
 }
 
@@ -132,3 +61,31 @@
     flex: 1;
 }
 
+@media (max-width: 768px) {
+    .test {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .titel {
+        font-size: 6vw;
+    }
+
+    .subtitle {
+        font-size: 4vw;
+        text-align: center;
+    }
+
+    .details {
+        text-align: center;
+    }
+
+    .btnn {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+}
