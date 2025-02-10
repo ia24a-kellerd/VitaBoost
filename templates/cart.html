@@ -3,78 +3,80 @@
 {% block title %}Cart{% endblock %}
 
 {% block style %}
-<link rel="stylesheet" href="{{ url_for('static', filename='styles/cart.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/cart.css') }}">
 {% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="left">
-        <h1 class="headline">Warenkorb</h1>
+    <div class="container">
+        <div class="left">
+            <h1 class="headline">Warenkorb</h1>
 
-        {% if session.get('cart') %}
-        <ul>
-            {% for item in session['cart'] %}
+            {% if session.get('cart') %}
+                <ul>
+                    {% for item in session['cart'] %}
 
-            <li class="itemBorder">
-                <div class="picture">
-                    <img src="{{ item['image'] }}" alt="{{ item['name'] }}" width="100">
-                </div>
-                <div class="pricecontainer">
-                    <span class="name">{{ item['name'] }}</span>
-                    <span class="pricecart">{{ item['price'] }}</span>
-                </div>
-            </li>
-            {% endfor %}
-        </ul>
-        <a href="{{ url_for('clear_cart') }}">
-            <button class="leeren">Warenkorb leeren</button>
-        </a>
-        {% else %}
-        <div class="inhaltWarenkorb">Es befinden sich noch keine Produkte im Warenkorb</div>
-        <a href="{{ url_for('shop') }}">
-            <button class="shoppen">Jetzt shoppen!</button>
-        </a>
-        {% endif %}
-    </div>
-
-    <div class="zahlungsContainer">
-        <h2 class="Titel">Zusammenfassung</h2>
-        <div class="versand">
-            <div class="absatz">
-                <div class="voraus">Zwischensumme</div>
-                <div>{{ "%.2f" | format(subtotal) }}&nbsp;CHF</div>
-            </div>
-            <div class="absatz">
-                <div class="voraus">
-                    Voraussichtliche Versand- und<br> Abfertigungskosten
-                </div>
-                <div>Kostenlos</div>
-            </div>
-            <div class="linie"></div>
-            <div class="absatz">
-                <div class="voraus">
-                    <div class="gesamt">Gesamt</div>
-
-                </div>
-                <div class="gesamt">{{ "%.2f" | format(total) }}&nbsp;CHF</div>
-            </div>
-            <div class="linie"></div>
+                        <li class="itemBorder">
+                            <div class="picture">
+                                <img src="{{ item['image'] }}" alt="{{ item['name'] }}" width="100">
+                            </div>
+                            <div class="pricecontainer">
+                                <span class="name">{{ item['name'] }}</span>
+                                <span class="pricecart">{{ item['price'] }}</span>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <a href="{{ url_for('clear_cart') }}">
+                    <button class="leeren">Warenkorb leeren</button>
+                </a>
+            {% else %}
+                <div class="inhaltWarenkorb">Es befinden sich noch keine Produkte im Warenkorb</div>
+                <a href="{{ url_for('shop') }}">
+                    <button class="shoppen">Jetzt shoppen!</button>
+                </a>
+            {% endif %}
         </div>
 
-        <button class="payment-button">
-            <img class="logos" src="{{ url_for('static', filename='assets/logos/visa.png') }}" alt="VISA">
-        </button>
-        <button class="payment-button">
-            <img class="logos" src="{{ url_for('static', filename='assets/logos/twint.png') }}" alt="TWINT">
-        </button>
-        <button class="payment-button">
-            <img class="paypal" src="{{ url_for('static', filename='assets/logos/paypal.png') }}" alt="PayPal">
-        </button>
-        <button class="unsichtbar">
-            <p>k</p>
-        </button>
-    </div>
-</div>
+        <div class="zahlungsContainer">
+            <h2 class="Titel">Zusammenfassung</h2>
+            <div class="versand">
+                <div class="absatz">
+                    <div class="voraus">Zwischensumme</div>
+                    <div>{{ "%.2f" | format(subtotal) }}&nbsp;CHF</div>
+                </div>
+                <div class="absatz">
+                    <div class="voraus">
+                        Voraussichtliche Versand- und<br> Abfertigungskosten
+                    </div>
+                    <div>Kostenlos</div>
+                </div>
+                <div class="linie"></div>
+                <div class="absatz">
+                    <div class="voraus">
+                        <div class="gesamt">Gesamt</div>
 
-{% include 'footer2.html' %}
+                    </div>
+                    <div class="gesamt">{{ "%.2f" | format(total) }}&nbsp;CHF</div>
+                </div>
+                <div class="linie"></div>
+            </div>
+
+            <button class="payment-button">
+                <img class="logos" src="{{ url_for('static', filename='assets/logos/visa.png') }}" alt="VISA">
+            </button>
+            <button class="payment-button">
+                <img class="logos" src="{{ url_for('static', filename='assets/logos/twint.png') }}" alt="TWINT">
+            </button>
+            <a href="{{ url_for('paypal') }}">
+                <button class="payment-button">
+                    <img class="paypal" src="{{ url_for('static', filename='assets/logos/paypal.png') }}" alt="PayPal">
+                </button>
+            </a>
+            <button class="unsichtbar">
+                <p>k</p>
+            </button>
+        </div>
+    </div>
+
+    {% include 'footer2.html' %}
 {% endblock %}

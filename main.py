@@ -105,6 +105,10 @@ def result(name) -> str:
     app.logger.info(f"Showing result for {name}")
     return render_template("result.html", name=name)
 
+@app.route("/paypal")
+def paypal() -> str:
+    return render_template("paypal.html")
+
 
 
 if __name__ == '__main__':
