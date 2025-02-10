@@ -65,6 +65,9 @@ def cart():
 def shop() -> str:
     return render_template("shop.html")
 
+@app.route("/visa")
+def visa() -> str:
+    return render_template("visa.html")
 
 @app.route("/add_to_cart", methods=["POST"])
 def add_to_cart():
