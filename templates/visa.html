@@ -1,32 +1,33 @@
-{% extends 'header.html' %}
+{% extends 'header2.html' %}
 
-{% block title %}Registrieren{% endblock %}
+{% block title %}Card payment{% endblock %}
 
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='styles/visa.css') }}">
 
 
-    <main class="content">
-        <h2>
-            <img src="{{ url_for('static', filename='assets/logos/visa.png') }}">
-        </h2>
-        <form class="form">
-            <label>Kartennummer:</label>
-            <input type="number" required placeholder="1234-5678-9101-1213">
+<main class="content">
+    <h2>
+        <img src="{{ url_for('static', filename='assets/logos/cards.png') }}">
+    </h2>
+    <form class="form">
+        <label>Kartennummer:</label>
+        <input type="number" required placeholder="1234-5678-9101-1213">
 
-            <label>Name auf der Karte</label>
-            <input type="name" id="email" name="email" required placeholder="Max Mustermann">
+        <label>Name auf der Karte</label>
+        <input type="name" required placeholder="Max Mustermann">
 
-            <label>CVP:</label>
-            <input pattern="\d{3}" maxlength="3" placeholder="xxx">
+        <label>CVP:</label>
+        <input pattern="\d{3}" maxlength="3" placeholder="xxx" required>
 
-            <label>Ablaufdatum: </label>
-            <input placeholder="xx/xx" required>
+        <label>Ablaufdatum: </label>
+        <input placeholder="xx/xx" required>
 
+        <button type="submit" onclick="window.location.href='{{ url_for('bestellbestaetigung') }}'">Kauf bestätigen</button>
 
-            <button type="submit">Kauf bestätigen</button>
-        </form>
-    </main>
+    </form>
+</main>
 </div>
 
+{% include 'footer2.html' %}
 {% endblock %}

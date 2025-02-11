@@ -1,0 +1,25 @@
+{% extends 'header2.html' %}
+
+
+{% block title %}Bestellbestätigung{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/bestellbestaetigung.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="confirmation-box">
+    <h1>Danke für deine Bestellung! 🎉</h1>
+    <p class="text">
+        Dein VitaBoost-Getränk ist auf dem Weg zu dir! Freue dich auf eine Extraportion Vitamine und pure Erfrischung.
+        Wir bereiten deine Bestellung mit Sorgfalt vor und schicken dir eine Versandbestätigung, sobald dein Paket unterwegs ist. <br>
+        Hast du Fragen? Unser Support-Team hilft dir gerne weiter.<br>
+        Bis bald – und bleib vital! 💪<br>
+    </p>
+    <h2>Dein VitaBoost-Team</h2>
+</div>
+
+
+{% include 'footer2.html' %}
+{% endblock %}

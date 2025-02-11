@@ -3,25 +3,25 @@
 {% block title %}PayPal{% endblock %}
 
 {% block content %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/paypal.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/paypal.css') }}">
 
+<div class="container">
 
-    <div class="login-container">
+    <main class="content">
         <img src="{{ url_for('static', filename='assets/logos/paypal.PNG') }}">
         <h2>Bei PayPal einloggen</h2>
+        <form class="form">
 
-        <form>
-            <label for="email">E-Mail-Adresse oder Handynummer</label>
-            <input type="text" id="email" name="email" required placeholder="maxmustermann@icloud.com or 079 753 41 96">
+            <label for="email">E-Mail:</label>
+            <input type="email" id="email" name="email" required placeholder="maxmustermann@icloud.com">
 
-            <label for="password">Passwort</label>
+            <label for="password">Password:</label>
             <input type="password" id="password" name="password" required placeholder="Mindestens 8 Zeichen">
 
-            <a href="#" class="forgot-password">Passwort vergessen?</a>
 
-            <button type="submit" class="login-button">Einloggen</button>
+            <button type="submit">Einloggen</button>
         </form>
-    </div>
-
-    {% include 'footer2.html' %}
+    </main>
+</div>
+{% include 'footer2.html' %}
 {% endblock %}

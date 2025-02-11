@@ -35,16 +35,13 @@
             <input type="password" id="password" name="password" required placeholder="Mindestens 8 Zeichen">
 
 
-            <label>Geburtsjahr:</label>
-            <select class="options">
-                <option class="item active">2025</option>
-                {% for year in range(2024, 1899, -1) %}
-                <option class="item">{{ year }}</option>
-                {% endfor %}
-            </select>
+            <label>Geburtsdatum:</label>
+            <input type="date" id="birthdate" name="birthdate" required>
 
 
-            <button type="submit">Account erstellen</button>
+            <a class="regiestrieenButton" href="{{ url_for('shop') }}">
+            <button type="button">Account erstellen</button>
+                </a>
              <li class="login"><a href="{{ url_for('login') }}">Bereits einen Account?</a></li>
         </form>
     </main>

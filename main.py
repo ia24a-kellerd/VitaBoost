@@ -1,3 +1,4 @@
+from textwrap import dedent
 
 from flask import Flask, request, render_template, url_for, redirect, session
 from flask_session import Session
@@ -69,6 +70,15 @@ def shop() -> str:
 def visa() -> str:
     return render_template("visa.html")
 
+@app.route('/bestellbestaetigung')
+def bestellbestaetigung():
+    return render_template("bestellbestaetigung.html")
+
+
+@app.route("/paypal")
+def paypal() -> str:
+    return render_template("paypal.html")
+
 @app.route("/add_to_cart", methods=["POST"])
 def add_to_cart():
     product_name = request.form.get("product_name")
@@ -95,6 +105,10 @@ def clear_cart():
 def hello_world() -> str:
     return 'Hello, World!'
 
+@app.route('/twint')
+def twint() -> str:
+    return render_template("twint.html")
+
 
 @app.route("/submit", methods=["POST"])
 def submit():
@@ -108,9 +122,6 @@ def result(name) -> str:
     app.logger.info(f"Showing result for {name}")
     return render_template("result.html", name=name)
 
-@app.route("/paypal")
-def paypal() -> str:
-    return render_template("paypal.html")
 
 
 
