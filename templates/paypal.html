@@ -18,10 +18,22 @@
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required placeholder="Mindestens 8 Zeichen">
 
-
-            <button type="submit">Einloggen</button>
+            <a href="{{ url_for('paypalzahlungsbildschirm') }}">
+    <button type="button" onclick="clearCartAndRedirect(event)">Einloggen</button>
+                </a>
         </form>
+        <script>
+            function clearCartAndRedirect(event) {
+                event.preventDefault();
+
+                fetch("{{ url_for('clear_cart') }}")
+                    .then(() => {
+                        window.location.href = "{{ url_for('bestellbestaetigung') }}";
+                    });
+            }
+        </script>
     </main>
+
 </div>
 {% include 'footer2.html' %}
 {% endblock %}

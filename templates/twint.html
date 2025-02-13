@@ -16,10 +16,22 @@
         <div class="bild1"><img src="{{ url_for('static', filename='assets/icons/häckchen.png' ) }}" alt=""></div>
         <div class="betrag"> Geben Sie den Totalbetrag ein und bestätigen Sie die Zahlung.</div>
         <a href="{{ url_for('bestellbestaetigung')}}">
-            <button class="weiterButton" type="submit">Weiter</button>
+
+    <button class="weiterButton"  type="submit" onclick="clearCartAndRedirect(event)">Weiter</button>
         </a>
     </div>
     <div class="bild0"><img src="{{ url_for('static', filename='assets/socials/Twint.png') }}" alt=""></div>
+
+     <script>
+            function clearCartAndRedirect(event) {
+                event.preventDefault();
+
+                fetch("{{ url_for('clear_cart') }}")
+                    .then(() => {
+                        window.location.href = "{{ url_for('bestellbestaetigung') }}";
+                    });
+            }
+        </script>
 </div>
 {% include 'footer2.html' %}
 {% endblock %}

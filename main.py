@@ -79,6 +79,10 @@ def bestellbestaetigung():
 def paypal() -> str:
     return render_template("paypal.html")
 
+@app.route("/paypalzahlungsbildschirm")
+def paypalzahlungsbildschirm() -> str:
+    return render_template("paypalZahlungsbildschirm.html")
+
 @app.route("/add_to_cart", methods=["POST"])
 def add_to_cart():
     product_name = request.form.get("product_name")

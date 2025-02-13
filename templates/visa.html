@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='styles/visa.css') }}">
 
 
+
 <main class="content">
     <h2>
         <img src="{{ url_for('static', filename='assets/logos/cards.png') }}">
@@ -23,11 +24,25 @@
         <label>Ablaufdatum: </label>
         <input placeholder="xx/xx" required>
 
-        <button type="submit" onclick="window.location.href='{{ url_for('bestellbestaetigung') }}'">Kauf bestätigen</button>
+    <button type="submit" onclick="clearCartAndRedirect(event)">Kauf bestätigen</button>
 
     </form>
+
+
+<script>
+    function clearCartAndRedirect(event) {
+        event.preventDefault();
+
+        fetch("{{ url_for('clear_cart') }}")
+            .then(() => {
+                window.location.href = "{{ url_for('bestellbestaetigung') }}";
+            });
+    }
+</script>
+
+
+
 </main>
-</div>
 
 {% include 'footer2.html' %}
 {% endblock %}

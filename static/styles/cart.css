@@ -132,3 +132,7 @@ span{
     color: white;
     font-size:  500%;
 }
+
+img {
+    height: auto;
+}
