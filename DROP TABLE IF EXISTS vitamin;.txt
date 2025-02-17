@@ -1,0 +1,87 @@
+DROP TABLE IF EXISTS vitamin;
+DROP TABLE IF EXISTS ingredientlist;
+DROP TABLE IF EXISTS flavour;
+DROP TABLE IF EXISTS employee;
+DROP TABLE IF EXISTS client;
+DROP TABLE IF EXISTS shipment;
+DROP TABLE IF EXISTS person;
+DROP TABLE IF EXISTS postalcode;
+
+CREATE TABLE postalcode (
+    postalcode INTEGER PRIMARY KEY,
+    place VARCHAR(50)
+);
+
+CREATE TABLE person (
+    person_id INTEGER PRIMARY KEY,
+    surname VARCHAR(20),
+    name VARCHAR(20),
+    postalcode INTEGER,
+    email VARCHAR(30),
+    phone INTEGER,
+    gender VARCHAR(15),
+    birth_date DATE,
+    FOREIGN KEY (postalcode) REFERENCES postalcode(postalcode)
+);
+
+CREATE TABLE employee (
+    employee_id INTEGER PRIMARY KEY,
+    person_id INTEGER,
+    salary DECIMAL(10,2),
+    job_title VARCHAR(50),
+    FOREIGN KEY (person_id) REFERENCES person(person_id)
+);
+
+CREATE TABLE shipment (
+    shipment_id INTEGER PRIMARY KEY,
+    postalcode INTEGER,
+    street VARCHAR(50),
+    date DATE,
+    FOREIGN KEY (postalcode) REFERENCES postalcode(postalcode)
+);
+
+CREATE TABLE client (
+    client_id INTEGER PRIMARY KEY,
+    person_id INTEGER,
+    shipment_id INTEGER,
+    creditcard VARCHAR(20),
+    FOREIGN KEY (person_id) REFERENCES person(person_id),
+    FOREIGN KEY (shipment_id) REFERENCES shipment(shipment_id)
+);
+
+CREATE TABLE ingredientlist (
+    ingredientlist_id INTEGER PRIMARY KEY,
+    calories INTEGER
+);
+
+CREATE TABLE flavour (
+    flavour_id INTEGER PRIMARY KEY,
+    ingredientlist_id INTEGER,
+    name VARCHAR(50),
+    color VARCHAR(20),
+    FOREIGN KEY (ingredientlist_id) REFERENCES ingredientlist(ingredientlist_id)
+);
+
+CREATE TABLE vitamin (
+    vitamin_id INTEGER PRIMARY KEY,
+    ingredient_id INTEGER,
+    vitamin VARCHAR(50),
+    FOREIGN KEY (ingredient_id) REFERENCES ingredientlist(ingredientlist_id)
+);
+
+
+INSERT INTO person (person_ID, first_name, last_name, birth_date, postalcode, email, phone_number, gender) 
+VALUES 
+    (1, 'Jan', 'Heiniger', '2008-12-05', 8412, 'jan.heiniger@zkb.ch', 0774536571, 'männlich'),
+    (2, 'Dan', 'Keller', '2008-12-31', 8640, 'dan.keller@zkb.ch', 0795734826, 'männlich'),
+    (3, 'Levin', 'Weibel', '2008-11-04', 5507, 'levin.weibel@zkb.ch', 0788959241, 'männlich'),
+    (4, 'Blenda', 'Ramani', '2009-04-12', 8606, 'blenda.ramani@zkb.ch', 0765368315, 'weiblich'),
+    (5, 'Callum', 'Rossborough', '2009-04-27', 8196, 'callum.rossborough@zkb.ch', 0762214001, 'weiblich')
+
+
+
+SELECT * FROM person;
+
+UPDATE person 
+SET last_name = 'Xavier Wanaree'
+WHERE person_ID = 3;
