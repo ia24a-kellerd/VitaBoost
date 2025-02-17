@@ -1,4 +1,4 @@
-{% extends 'header2.html' %}
+{% extends 'header.html' %}
 {% block title %}Twint{% endblock %}
 {% block style %}
 <link rel="stylesheet" href="{{ url_for('static', filename='styles/twint.css') }}">
@@ -33,5 +33,4 @@
             }
         </script>
 </div>
-{% include 'footer2.html' %}
 {% endblock %}
