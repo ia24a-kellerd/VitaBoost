@@ -9,4 +9,7 @@ p{
     display: flex;
     justify-self: center;
     align-self: center;
+    width: 19%;
+    height: auto;
+    padding-bottom: 25%;
 }

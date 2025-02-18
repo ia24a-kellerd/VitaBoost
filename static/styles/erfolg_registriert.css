@@ -4,5 +4,14 @@ h2{
 }
 a{
     display: flex;
-    justify-content: center;
+    justify-self: center;
+    color:green;
+    font-size: 30px;
+}
+.haken{
+    display: flex;
+    justify-self: center;
+    width: 19%;
+    height: auto;
+    padding-bottom: 30%;
 }
