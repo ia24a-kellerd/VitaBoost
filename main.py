@@ -3,15 +3,13 @@ from textwrap import dedent
 from flask import Flask, request, render_template, url_for, redirect, session
 from flask_session import Session
 import services.math_service as math_service
-
+from tests.test import insert_customer
 
 app = Flask(__name__, static_url_path='/static', static_folder='static')
-
 
 app.config["SESSION_TYPE"] = "filesystem"
 app.secret_key = "supersecretkey"
 Session(app)
-
 
 languages = [
     {"name": "Python", "creator": "Guido van Rossum", "year": 1991},
@@ -21,11 +19,13 @@ languages = [
     {"name": "Ruby", "creator": "Yukihiro Matsumoto", "year": 1995},
 ]
 
+
 @app.route("/")
 def home() -> str:
     print(math_service.add(1.0, 2.0))
     app.logger.info("Rendering home page")
     return render_template("home.html")
+
 
 @app.route("/about_flask")
 def about_flask() -> str:
@@ -42,9 +42,33 @@ def contact() -> str:
 def profile() -> str:
     return render_template("profile.html")
 
+
+@app.route("/submit", methods=["POST"])
+def submit():
+    firstname = request.form.get("firstname")
+    surname = request.form.get("surname")
+    email = request.form.get("email")
+    password = request.form.get("password")
+    birthdate = request.form.get("birthdate")
+
+    session['firstname'] = firstname
+    session['surname'] = surname
+    session['email'] = email
+    session['password'] = password
+    session['birthdate'] = birthdate
+
+    if insert_customer(firstname, surname, email, password, birthdate):
+        print("ja")
+        return render_template("erfolg_registriert.html", surname=surname, firstname=firstname)
+    else:
+        print("nai")
+        return render_template('falsch_registriert.html')
+
+
 @app.route("/login")
 def login() -> str:
     return render_template("login.html")
+
 
 @app.route("/deleteaccount")
 def deleteaccount() -> str:
@@ -54,7 +78,6 @@ def deleteaccount() -> str:
 @app.route("/warenkorb")
 def cart():
     cart_items = session.get("cart", [])
-
 
     subtotal = sum(float(item["price"].replace(" CHF", "").strip()) for item in cart_items) if cart_items else 0.0
     total = round(subtotal, 2)
@@ -66,9 +89,11 @@ def cart():
 def shop() -> str:
     return render_template("shop.html")
 
+
 @app.route("/visa")
 def visa() -> str:
     return render_template("visa.html")
+
 
 @app.route('/bestellbestaetigung')
 def bestellbestaetigung():
@@ -79,16 +104,17 @@ def bestellbestaetigung():
 def paypal() -> str:
     return render_template("paypal.html")
 
+
 @app.route("/paypalzahlungsbildschirm")
 def paypalzahlungsbildschirm() -> str:
     return render_template("paypalZahlungsbildschirm.html")
+
 
 @app.route("/add_to_cart", methods=["POST"])
 def add_to_cart():
     product_name = request.form.get("product_name")
     product_image = request.form.get("product_image")
     product_price = request.form.get("product_price")
-
 
     session["cart"] = session.get("cart", []).copy()
     session["cart"].append({"name": product_name, "image": product_image, "price": product_price})
@@ -103,30 +129,20 @@ def clear_cart():
     return redirect(url_for("cart"))
 
 
-
-
 @app.route('/helloWorld')
 def hello_world() -> str:
     return 'Hello, World!'
+
 
 @app.route('/twint')
 def twint() -> str:
     return render_template("twint.html")
 
 
-@app.route("/submit", methods=["POST"])
-def submit():
-    app.logger.info("Form submitted")
-    name = request.form.get("name")
-    return redirect(url_for("result", name=name))
-
-
 @app.route("/result/<name>")
-def result(name) -> str:
-    app.logger.info(f"Showing result for {name}")
-    return render_template("result.html", name=name)
-
-
+def result(firstname, surname) -> str:
+    app.logger.info(f"Showing result for {firstname}")
+    return render_template("erfolg_registriert.html", firstname=firstname, surname=surname)
 
 
 if __name__ == '__main__':

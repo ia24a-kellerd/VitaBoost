@@ -14,7 +14,9 @@
                 <li class="line"><a>Sicherheit</a></li>
                 <li class="line"><a>Passwort ändern</a></li>
                 <li class="line"><a>Benachrichtigungen</a></li>
-                <li class="baseline" style="color: red; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'"><a href="{{ url_for('deleteaccount') }}">Account löschen...</a></li>
+                <li class="baseline" style="color: red; text-decoration: none;"
+                    onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'"><a
+                        href="{{ url_for('deleteaccount') }}">Account löschen...</a></li>
             </ul>
             <a href="{{ url_for('login') }}">
                 <button>Login</button>
@@ -24,9 +26,12 @@
 
     <main class="content">
         <h2>VitaBoost-Account erstellen</h2>
-        <form class="form">
-            <label for="name">Voller Name:</label>
-            <input type="text" id="name" name="name" required placeholder="Max Mustermann">
+        <form class="form" action="{{ url_for('submit') }}" method="POST">
+            <label for="firstname">Vorname:</label>
+            <input type="text" id="firstname" name="firstname" required placeholder="Max">
+
+            <label for="surname">Nachname:</label>
+            <input type="text" id="surname" name="surname" required placeholder="Mustermann">
 
             <label for="email">E-Mail:</label>
             <input type="email" id="email" name="email" required placeholder="maxmustermann@icloud.com">
@@ -38,11 +43,8 @@
             <label>Geburtsdatum:</label>
             <input type="date" id="birthdate" name="birthdate" required>
 
-
-            <a class="regiestrieenButton" href="{{ url_for('shop') }}">
-            <button type="button">Account erstellen</button>
-                </a>
-             <li class="login"><a href="{{ url_for('login') }}">Bereits einen Account?</a></li>
+            <button class="regiestrieenButton" type="submit">Account erstellen</button>
+            <li class="login"><a href="{{ url_for('login') }}">Bereits einen Account?</a></li>
         </form>
     </main>
 </div>

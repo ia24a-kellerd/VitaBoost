@@ -1,0 +1,17 @@
+{% extends 'header2.html' %}
+
+{% block title %}Registrieren{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/falsch_registriert.css') }}">
+
+<div class="container">
+    <main class="content">
+        <p>Sie haben sich mit dieser E-mail bereits registriert.</p>
+          <img class="rauchen" src="{{ url_for('static', filename='assets/icons/stop.gif') }}">
+
+
+    </main>
+</div>
+{% include 'footer2.html' %}
+{% endblock %}

@@ -1,0 +1,12 @@
+p{
+    display: flex;
+    justify-content: center;
+    color:red;
+    align-items: center;
+    font-size: 30px;
+}
+.rauchen{
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}

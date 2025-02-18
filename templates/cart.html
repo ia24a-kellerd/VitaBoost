@@ -1,4 +1,4 @@
-{% extends 'header.html' %}
+{% extends 'header2.html' %}
 
 {% block title %}Cart{% endblock %}
 
@@ -14,6 +14,7 @@
         {% if session.get('cart') %}
         <ul>
             {% for item in session['cart'] %}
+
             <li class="itemBorder">
                 <div class="picture">
                     <img src="{{ item['image'] }}" alt="{{ item['name'] }}" width="100">
@@ -25,10 +26,14 @@
             </li>
             {% endfor %}
         </ul>
-        <button class="leeren" onclick="window.location.href='{{ url_for('clear_cart') }}'">Warenkorb leeren</button>
+        <a href="{{ url_for('clear_cart') }}">
+            <button class="leeren">Warenkorb leeren</button>
+        </a>
         {% else %}
         <div class="inhaltWarenkorb">Es befinden sich noch keine Produkte im Warenkorb</div>
-        <button class="shoppen" onclick="window.location.href='{{ url_for('shop') }}'">Jetzt shoppen!</button>
+        <a href="{{ url_for('shop') }}">
+            <button class="shoppen">Jetzt shoppen!</button>
+        </a>
         {% endif %}
     </div>
 
@@ -49,23 +54,27 @@
             <div class="absatz">
                 <div class="voraus">
                     <div class="gesamt">Gesamt</div>
+
                 </div>
                 <div class="gesamt">{{ "%.2f" | format(total) }}&nbsp;CHF</div>
             </div>
             <div class="linie"></div>
         </div>
-        <a href="{{ url_for('visa') }}" class="payment-button">
-            <img class="logos" src="{{ url_for('static', filename='assets/logos/cards.png') }}" alt="VISA">
-        </a>
-        <a href="{{ url_for('paypal') }}" class="payment-button">
+
+        <button class="payment-button">
+            <img class="logos" src="{{ url_for('static', filename='assets/logos/visa.png') }}" alt="VISA">
+        </button>
+        <button class="payment-button">
+            <img class="logos" src="{{ url_for('static', filename='assets/logos/twint.png') }}" alt="TWINT">
+        </button>
+        <button class="payment-button">
             <img class="paypal" src="{{ url_for('static', filename='assets/logos/paypal.png') }}" alt="PayPal">
-        </a>
-        <a href="{{ url_for('twint') }}" class="payment-button">
-            <img class="twint" src="{{ url_for('static', filename='assets/logos/Twint.png') }}" alt="TWINT">
-        </a>
-        <button class="unsichtbar" disabled>
+        </button>
+        <button class="unsichtbar">
             <p>k</p>
         </button>
     </div>
 </div>
+
+{% include 'footer2.html' %}
 {% endblock %}
