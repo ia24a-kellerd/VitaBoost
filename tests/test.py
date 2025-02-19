@@ -45,6 +45,31 @@ def insert_customer(firstname, surname, email, password, birthdate):
     cursor.close()
     return True
 
+
+def login_customer(email, password):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT password FROM customer WHERE email = %s", (email,))
+    result = cursor.fetchone()
+
+    if result is None:
+        cursor.close()
+        conn.close()
+        return False
+
+    stored_password = result[0]
+
+    if stored_password == password:
+        cursor.close()
+        conn.close()
+        return True
+    else:
+        cursor.close()
+        conn.close()
+        return False
+
+
 if __name__ == '__main__':
     conn = get_db_connection()
 

@@ -21,7 +21,7 @@
 
     <main class="content">
         <h2>Login</h2>
-        <form class="form">
+      <form class="form" action="{{ url_for('submit2') }}" method="POST">
 
             <label for="email">E-Mail:</label>
             <input type="email" id="email" name="email" required>

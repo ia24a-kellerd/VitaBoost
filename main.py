@@ -3,7 +3,7 @@ from textwrap import dedent
 from flask import Flask, request, render_template, url_for, redirect, session
 from flask_session import Session
 import services.math_service as math_service
-from tests.test import insert_customer
+from tests.test import insert_customer, login_customer
 
 app = Flask(__name__, static_url_path='/static', static_folder='static')
 
@@ -59,11 +59,25 @@ def submit():
 
     if insert_customer(firstname, surname, email, password, birthdate):
         print("ja")
-        return render_template("erfolg_registriert.html", surname=surname, firstname=firstname)
+        return render_template("erfolg_registriert.html", surname=surname, firstname='Hallo ' + firstname)
     else:
         print("nai")
-        return render_template('falsch_registriert.html')
+        return render_template('falsch_registriert.html', surname='Die Email wurde schon registriert.')
 
+@app.route("/submit2", methods=["POST"])
+def submit2():
+    email = request.form.get("email")
+    password = request.form.get("password")
+
+    session['email'] = email
+    session['password'] = password
+
+    if login_customer(email, password):
+        print("ja")
+        return render_template("erfolg_registriert.html", surname='Erfolgreich angemeldet!')
+    else:
+        print("nai")
+        return render_template('falsch_registriert.html', surname='Email und/oder Passwort stimmt nicht!')
 
 @app.route("/login")
 def login() -> str:
@@ -120,7 +134,7 @@ def add_to_cart():
     session["cart"].append({"name": product_name, "image": product_image, "price": product_price})
     session.modified = True
 
-    return redirect(url_for("cart"))
+    return redirect(url_for("shop"))
 
 
 @app.route("/clear_cart")
@@ -143,6 +157,7 @@ def twint() -> str:
 def result(firstname, surname) -> str:
     app.logger.info(f"Showing result for {firstname}")
     return render_template("erfolg_registriert.html", firstname=firstname, surname=surname)
+
 
 
 if __name__ == '__main__':

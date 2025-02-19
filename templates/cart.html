@@ -61,15 +61,23 @@
             <div class="linie"></div>
         </div>
 
-        <button class="payment-button">
-            <img class="logos" src="{{ url_for('static', filename='assets/logos/visa.png') }}" alt="VISA">
-        </button>
-        <button class="payment-button">
-            <img class="logos" src="{{ url_for('static', filename='assets/logos/twint.png') }}" alt="TWINT">
-        </button>
-        <button class="payment-button">
-            <img class="paypal" src="{{ url_for('static', filename='assets/logos/paypal.png') }}" alt="PayPal">
-        </button>
+
+        <a href="{{ url_for('visa') }}">
+            <button class="payment-button">
+
+                <img class="logos" src="{{ url_for('static', filename='assets/logos/visa.png') }}" alt="VISA">
+            </button>
+        </a>
+        <a href="{{ url_for('twint') }}">
+            <button class="payment-button">
+                <img class="logos" src="{{ url_for('static', filename='assets/logos/twint.png') }}" alt="TWINT">
+            </button>
+        </a>
+        <a href="{{ url_for('paypal') }}">
+            <button class="payment-button">
+                <img class="paypal" src="{{ url_for('static', filename='assets/logos/paypal.png') }}" alt="PayPal">
+            </button>
+        </a>
         <button class="unsichtbar">
             <p>k</p>
         </button>
