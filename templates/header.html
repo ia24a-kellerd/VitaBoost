@@ -32,9 +32,8 @@
 
         <a class="cart" href="{{ url_for('cart') }}">
             <img class="cart" src="{{ url_for('static', filename='assets/icons/shopping-cart.png') }}" alt="">
-            <span id="cart-count" class="cart-badge"
-                  {% if session.get('cart_count', 0) > 0 %}style="display: block;"{% else %}style="display: none;"{%
-            endif %}>
+            <span class="cartlogo"
+                  {% if session.get('cart_count', 0) > 0 %}style="display: block;"{% else %}style="display: none;"{% endif %}>
             {{ session.get('cart_count', 0) }}
             </span>
 
