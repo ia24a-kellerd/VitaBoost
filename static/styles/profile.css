@@ -71,6 +71,29 @@ h2 {
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 100%;
+    box-sizing: border-box;
+}
+
+.password-container {
+    position: relative;
+    margin-top: 5px;
+}
+
+.password-container input {
+    padding-right: 40px;
+}
+
+.password-container .eye-icon {
+    position: absolute;
+    right: 10px;
+    top: 30%;
+    cursor: pointer;
+    color: #555;
+}
+
+.eye-icon img {
+    height: 20px;
+    width: auto;
 }
 
 .form button {
