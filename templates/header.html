@@ -12,7 +12,9 @@
 </head>
 <body>
 <div class="header">
-    <a class="logo" href="{{ url_for('home') }}"><img class="logo" src="{{ url_for('static', filename='assets/logos/logo.png') }}" alt=""></a>
+    <a class="logo" href="{{ url_for('home') }}"><img class="logo"
+                                                      src="{{ url_for('static', filename='assets/logos/logo.png') }}"
+                                                      alt=""></a>
     <div class="middle">
         <a class="title" href="{{ url_for('home') }}"><h1 class="title">VitaBoost</h1></a>
         <nav class="links">
@@ -24,8 +26,19 @@
         </nav>
     </div>
     <div class="icons">
-        <a class="profile" href="{{ url_for('profile') }}"><img class="profile" src="{{ url_for('static', filename='assets/icons/user.png') }}" alt=""></a>
-        <a class="cart" href="{{ url_for('cart') }}"><img class="cart" src="{{ url_for('static', filename='assets/icons/shopping-cart.png') }}" alt=""></a>
+        <a class="profile" href="{{ url_for('profile') }}">
+            <img class="profile" src="{{ url_for('static', filename='assets/icons/user.png') }}" alt="">
+        </a>
+
+        <a class="cart" href="{{ url_for('cart') }}">
+            <img class="cart" src="{{ url_for('static', filename='assets/icons/shopping-cart.png') }}" alt="">
+            <span id="cart-count" class="cart-badge"
+                  {% if session.get('cart_count', 0) > 0 %}style="display: block;"{% else %}style="display: none;"{%
+            endif %}>
+            {{ session.get('cart_count', 0) }}
+            </span>
+
+        </a>
     </div>
 </div>
 
