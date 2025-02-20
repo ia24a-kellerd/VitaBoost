@@ -135,16 +135,20 @@ def add_to_cart():
     product_image = request.form.get("product_image")
     product_price = request.form.get("product_price")
 
-    session["cart"] = session.get("cart", []).copy()
-    session["cart"].append({"name": product_name, "image": product_image, "price": product_price})
-    session.modified = True
+    cart = session.get("cart", [])
+    cart.append({"name": product_name, "image": product_image, "price": product_price})
+    session["cart"] = cart
+    session["cart_count"] = len(cart)
 
     return redirect(url_for("shop"))
+
 
 
 @app.route("/clear_cart")
 def clear_cart():
     session.pop("cart", None)
+    session["cart_count"] = 0
+    session.modified = True
     return redirect(url_for("cart"))
 
 
