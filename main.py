@@ -49,15 +49,20 @@ def submit():
     surname = request.form.get("surname")
     email = request.form.get("email")
     password = request.form.get("password")
+    password_again = request.form.get("password_again")
     birthdate = request.form.get("birthdate")
 
     session['firstname'] = firstname
     session['surname'] = surname
     session['email'] = email
     session['password'] = password
+    session['password_again'] = password_again
     session['birthdate'] = birthdate
 
-    if insert_customer(firstname, surname, email, password, birthdate):
+    if password != password_again:
+        print("Wrong Password")
+        return render_template("profile.html", error="Wrong Password")
+    elif insert_customer(firstname, surname, email, password, birthdate):
         print("ja")
         return render_template("erfolg_registriert.html", surname=surname, firstname='Hallo ' + firstname)
     else:
