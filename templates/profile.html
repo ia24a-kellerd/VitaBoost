@@ -42,7 +42,9 @@
                 <div class="password-container">
                     <input type="password" id="password" name="password" required placeholder="Mindestens 8 Zeichen">
                     <span class="eye-icon" onclick="togglePassword('password', 'eye-icon1')">
-                        <img src="{{ url_for('static', filename='assets/icons/eye.png') }}" id="eye-icon1" alt="Show password">
+                        <img src="{{ url_for('static', filename='assets/icons/eye.png') }}"
+                             id="eye-icon1"
+                             alt="Toggle password visibility">
                     </span>
                 </div>
 
@@ -66,14 +68,13 @@
         function togglePassword(inputId, iconId) {
             const passwordField = document.getElementById(inputId);
             const eyeIcon = document.getElementById(iconId);
+
             if (passwordField.type === 'password') {
                 passwordField.type = 'text';
-                eyeIcon.classList.remove('fa-eye');
-                eyeIcon.classList.add('fa-eye-slash');
+                eyeIcon.src = "{{ url_for('static', filename='assets/icons/hidden.png') }}";
             } else {
                 passwordField.type = 'password';
-                eyeIcon.classList.remove('fa-eye-slash');
-                eyeIcon.classList.add('fa-eye');
+                eyeIcon.src = "{{ url_for('static', filename='assets/icons/eye.png') }}";
             }
         }
     </script>
