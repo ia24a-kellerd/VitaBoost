@@ -63,7 +63,7 @@ body {
     padding-bottom: 3px;
 }
 .leeren{
-     height: auto;
+    height: auto;
     width: 65%;
     margin-top: 5%;
     border-radius: 15px;
@@ -72,7 +72,6 @@ body {
     font-size: 100%;
     padding-top: 3px;
     padding-bottom: 20px;
-    margin-bottom: 5%;
 }
 
 h1{
