@@ -123,10 +123,12 @@ def bestellbestaetigung():
 def paypal() -> str:
     return render_template("paypal.html")
 
-
-@app.route("/paypalzahlungsbildschirm")
-def paypalzahlungsbildschirm() -> str:
+@app.route("/paypalZahlungsbildschirm")
+def paypalZahlungsbildschirm() -> str:
     return render_template("paypalZahlungsbildschirm.html")
+
+
+
 
 
 @app.route("/add_to_cart", methods=["POST"])
